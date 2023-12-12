@@ -1,4 +1,5 @@
 from porsche import Carrera
+import pandas as pd
 
 
 ###### Information
@@ -18,5 +19,14 @@ carrera_T = Carrera("992", False, model="911 Carrera T", price=139559, year=2020
 # Carrera 992 S
 carrera_S = Carrera("992", False, model="911 Carrera S", price=140485, year=2020)
 
+# This is an example of things that do not work.
+carrerataycan = Carrera("992", False, model="Taycan Turbo", price=200000, year=2021)
 
+
+
+
+
+
+# print(carrerataycan.carrera_name())
+# returns assertion error
 

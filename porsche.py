@@ -12,13 +12,18 @@ class Porsche:
                  maxspeed=0,
                  exterior_color="grey",
                  interior_color="black"):
+        # Model describes which models it corresponds to
+        # Example: 911 Carrera S
         self.model = model
+        # Price is given in Euros
         self.price = price
         # The year of its generation
         self.year = year
-        # Defines if it's an electric, a hybrid or thermic engine
+        # Energy defines if it's an electric, a hybrid or thermic engine
         self.energy = energy
+        # hp stands for horsepower
         self.hp = hp
+        # acceleration is how much time it takes to go from 0 to a 100 km/h
         self.acceleration = acceleration
         self.maxspeed = maxspeed
         self.exterior_color = exterior_color
@@ -39,10 +44,19 @@ class Porsche:
         return self.hp, self.acceleration, self.maxspeed
 
     def exterior_color(self, color: str):
+        """
+        This function set the color for the exterior of the car. It returns the value you entered.
+        :param color: str color of the car
+        :return: the value of the attribute color for the chosen item.
+        """
         self.color=color
         return self.color
 
     def base_spec(self):
+        """
+        This function returns as a dictionary the basic specifications of the Porsche car. It acts as a summary of all basic attributes of a Porsche model.
+        :return: a dictionary with all class attributes.
+        """
         dict= {
             "price": self.price,
             "year": self.year,
@@ -67,6 +81,11 @@ class Carrera(Porsche):
         self.convertible = convertible
 
     def carrera_name(self):
+        """
+        This function creates the full name of a Porsche Carrera. Its name consist of a model, a phase, and the fact if it's convertible or not.
+        :return: the full name of the car
+        """
+        assert "carrera" in self.model.lower()
         part_name = self.model + " " + self.phase
         if self.convertible is False:
             full_name = part_name
@@ -75,6 +94,10 @@ class Carrera(Porsche):
         return full_name
 
     def carrera_card(self):
+        """
+        This function returns the ID card of the Porsche car: full name, model, phase, if it is convertible or not.
+        :return: a dictionary with all the mentioned information
+        """
         carrera = {
             "full id": self.carrera_name(),
             "model": self.model,
@@ -84,6 +107,11 @@ class Carrera(Porsche):
         return carrera
 
     def __repr__(self):
+        """
+        This is a representation of the Carrera Object.
+        As a difference to __string__ constructor, this is a the most general way of representing Carrera object using the print function.
+        :return: a string representation of the object.
+        """
         return f"Porsche {self.carrera_name()}"
 
 class Targa(Porsche):
