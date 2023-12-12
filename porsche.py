@@ -1,4 +1,7 @@
 
+# The main class Porsche will have the main characteristics necessary to build a Porsche model
+# It will have the following information: model, price, year, energy (Hybrid, Thermic or Electric), hp (horse power), acceleration, max speed, exterior color and interior color
+
 class Porsche:
     def __init__(self, model: str,
                  price: int,
@@ -22,6 +25,14 @@ class Porsche:
         self.interior_color = interior_color
 
     def set_technicals(self, hp: int, acceleration: float, maxspeed: int):
+        """
+        This function set for the object the hp (horsepower), acceleration and maxspeed and returns the entered parameters.
+
+        :param hp: int the horsepower of the car
+        :param acceleration: float the time it takes to the Porsche to go from 0 to 100km/h
+        :param maxspeed: int the max speed on circuit in km/h
+        :return: car's hp, acceleration, maxspeed
+        """
         self.hp= hp
         self.acceleration= acceleration
         self.maxspeed= maxspeed
